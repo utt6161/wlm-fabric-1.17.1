@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "wlm",
+  "version": "${version}",
+
+  "name": "Whitelist Modifier",
+  "description": "Why would you even check this, if u use it, you know wtf is going on",
+  "authors": [
+    "who...?"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/wlm/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.znkv.wlm.WlmMod"
+    ]
+  },
+  "mixins": [
+    "wlm.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
