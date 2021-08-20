@@ -40,6 +40,8 @@ dependencies {
 	shadow 'joda-time:joda-time:2.10.9'
 	implementation 'org.json:json:20210307'
 	shadow 'org.json:json:20210307'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.0.1'
+	shadow 'com.fasterxml.jackson.core:jackson-databind:2.0.1'
 //	implementation 'mysql:mysql-connector-java:8.0.13'
 //	shadow 'mysql:mysql-connector-java:8.0.13'
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.

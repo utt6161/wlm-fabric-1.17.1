@@ -18,7 +18,7 @@ public class AddUserCommand {
                         .then(CommandManager.argument("user",word())
                                 .then(CommandManager.argument("months", word())
                                         .executes(context -> {
-                                            DonationProcessor.addPlayerFromCommand(getString(context, "user"), getString(context, "months"));
+                                            DonationProcessor.addPlayerFromCommandOrDonation(getString(context, "user"), getString(context, "months"), false);
                                             return 0;
                                         }))));
 

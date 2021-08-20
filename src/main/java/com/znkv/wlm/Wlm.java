@@ -18,7 +18,7 @@ import static com.znkv.wlm.Utils.WlmLogger.logError;
 
 public class Wlm {
 
-    //public static final ExecutorService THREADPOOL = Executors.newCachedThreadPool();
+    public static final ExecutorService THREADPOOL = Executors.newCachedThreadPool();
 
     public static WlmConfig config;
 
@@ -47,16 +47,16 @@ public class Wlm {
      */
     public static void stop() {
         logInfo("Shutting down Whitelist Modifier.");
-//        // Closing threads
-//        try {
-//            THREADPOOL.shutdownNow();
-//            if (!THREADPOOL.awaitTermination(500, TimeUnit.MILLISECONDS)) {
-//                Thread.currentThread().interrupt();
-//            }
-//        } catch (InterruptedException e) {
-//            logError(e.getMessage());
-//            THREADPOOL.shutdownNow();
-//        }
+        // Closing threads
+        try {
+            THREADPOOL.shutdownNow();
+            if (!THREADPOOL.awaitTermination(500, TimeUnit.MILLISECONDS)) {
+                Thread.currentThread().interrupt();
+            }
+        } catch (InterruptedException e) {
+            logError(e.getMessage());
+            THREADPOOL.shutdownNow();
+        }
     }
 
 }

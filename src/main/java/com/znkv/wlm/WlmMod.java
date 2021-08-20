@@ -8,6 +8,8 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.loader.api.FabricLoader;
 
+import static com.znkv.wlm.Wlm.THREADPOOL;
+
 public class WlmMod implements ModInitializer {
 
 	private static int tick = 0;
@@ -50,7 +52,9 @@ public class WlmMod implements ModInitializer {
 				return;
 			}
 			if(tick >= Wlm.config.currentInstance.main.Whitelist_Reload_time){
-				DonationProcessor.run();
+				THREADPOOL.submit(()->{
+					DonationProcessor.run();
+				});
 				tick = 0;
 			}
 		});
