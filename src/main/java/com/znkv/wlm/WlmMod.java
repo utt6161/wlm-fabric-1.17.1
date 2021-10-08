@@ -45,13 +45,10 @@ public class WlmMod implements ModInitializer {
 		ServerTickEvents.START_SERVER_TICK.register((server)->{
 			if(Wlm.config.currentInstance.main.Should_I_Check_Whitelist){
 				tick++;
-			} else {
-				tick = 0;
-				return;
-			}
-			if(tick >= Wlm.config.currentInstance.main.Whitelist_Reload_time){
-				DonationProcessor.run();
-				tick = 0;
+				if(tick >= Wlm.config.currentInstance.main.Whitelist_Reload_time){
+					DonationProcessor.run();
+					tick = 0;
+				}
 			}
 		});
 	}
